@@ -1,0 +1,30 @@
+<div id="main" align="center">
+  <h1>Calculator</h1>
+  <div class="hello">
+    <div class="display">{{ current }}</div>
+    <div class="calc-button" v-on:click="current = (1/parseFloat(current)).toString()" v-if="current != '0'">1/x</div>
+    <div disabled class="calc-button"  v-if="current == '0'">1/x</div>
+    <div class="calc-button" v-on:click="current = (0 - parseFloat(current)).toString()">+/-</div>
+    <div class="calc-button" v-on:click="current = (parseFloat(current)/100).toString()">%</div>
+    <div class="calc-button oper" v-on:click="clear">CE</div>
+    <div class="calc-button" v-on:click="handle(7)">7</div>
+    <div class="calc-button" v-on:click="handle(8)">8</div>
+    <div class="calc-button" v-on:click="handle(9)">9</div>
+    <div class="calc-button oper" v-on:click="oper('divide')">÷</div>
+    <div class="calc-button" v-on:click="handle(4)">4</div>
+    <div class="calc-button" v-on:click="handle(5)">5</div>
+    <div class="calc-button" v-on:click="handle(6)">6</div>
+    <div class="calc-button oper" v-on:click="oper('multi')">x</div>
+    <div class="calc-button" v-on:click="handle(1)">1</div>
+    <div class="calc-button" v-on:click="handle(2)">2</div>
+    <div class="calc-button" v-on:click="handle(3)">3</div>
+    <div class="calc-button oper" v-on:click="oper('minus')">-</div>
+    <div class="calc-button" v-on:click="handle(0)">0</div>
+    <div class="calc-button" v-on:click="point">.</div>
+    <div class="calc-button equal" v-on:click="equal">=</div>
+    <div class="calc-button oper" v-on:click="oper('plus')">+</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="index.js"></script>
+<link rel="stylesheet" href="style.css">
